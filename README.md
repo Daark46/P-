@@ -28,6 +28,8 @@
 
 ### Ответ 1
 
+
+
 ### Задание 2. PostgreSQL
 
 2.1. С помощью официальной документации приведите пример команды резервирования данных и восстановления БД (pgdump/pgrestore).
@@ -38,6 +40,10 @@
 
 ### Ответ 2
 
+pg_dump -h localhost -U username dbname > backup.sql
+
+psql -h localhost -U username dbname < backup.sql
+
 ### Задание 3. MySQL
 
 3.1. С помощью официальной документации приведите пример команды инкрементного резервного копирования базы данных MySQL.
@@ -47,5 +53,7 @@
 Приведите ответ в свободной форме.
 
 ### Ответ 3
+
+mysqldump --databases mydatabase --single-transaction --flush-logs | gzip > /path/to/backup-$(date +%Y-%m-%d-%H-%M-%S).sql.gz
 
 
